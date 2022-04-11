@@ -43,6 +43,27 @@
                     {{ __('Log in') }}
                 </x-jet-button>
             </div>
+             {{-- Login with Facebook --}}
+            <div class="flex items-center justify-end mt-4">
+                <a class="btn" href="{{ route('socialite.redirect', 'facebook') }}"
+                    style="background: #3B5499; color: #ffffff; padding: 10px; width: 100%; text-align: center; display: block; border-radius:3px;">
+                    Se connecter avec Facebook
+                </a>
+            </div>
+             {{-- Se connecter avec Github --}}
+            <div class="flex items-center justify-end mt-4">
+                <a class="btn" href="{{ route('socialite.redirect', 'github') }}"
+                    style="background: #111113; color: #ffffff; padding: 10px; width: 100%; text-align: center; display: block; border-radius:3px;">
+                    Se connecter avec Github
+                </a>
+            </div>
+             {{-- Login with google --}}
+            <div class="flex items-center justify-end mt-4">
+                <a class="btn" href="{{ route('socialite.redirect', 'google') }}"
+                    style="background: #c8ca41; color: #ffffff; padding: 10px; width: 100%; text-align: center; display: block; border-radius:3px;">
+                    Login with Google
+                </a>
+            </div>
         </form>
     </x-jet-authentication-card>
 </x-guest-layout>
