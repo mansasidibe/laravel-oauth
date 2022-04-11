@@ -26,3 +26,13 @@ Route::get("redirect/{provider}", [SocialiteController::class, 'redirect'])->nam
 
 // Le callback du provider
 Route::get("callback/{provider}", [SocialiteController::class, 'callback'])->name('socialite.callback');
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
